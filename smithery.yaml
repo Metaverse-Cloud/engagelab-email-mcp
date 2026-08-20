@@ -1,0 +1,27 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      secretKey:
+        type: string
+        title: EngageLab Secret Key
+        description: The Secret Key (starting with sk_) from the EngageLab console.
+      baseUrl:
+        type: string
+        title: Base URL
+        description: Optional API base URL override. Inferred from the key region if omitted.
+  commandFunction:
+    # A function that produces the CLI command based on the given config options.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['dist/index.cjs'],
+      env: {
+        ENGAGELAB_EMAIL_SECRET_KEY: config.secretKey,
+        ...(config.baseUrl ? { ENGAGELAB_EMAIL_BASE_URL: config.baseUrl } : {})
+      }
+    })

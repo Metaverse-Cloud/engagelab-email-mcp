@@ -1,0 +1,56 @@
+{
+  "name": "@engagelabemail/mcp",
+  "version": "0.1.0",
+  "description": "MCP server for EngageLab Agent Email: send, receive, monitor and reply to email from AI agents",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "bin": {
+    "engagelab-email-mcp": "./dist/index.cjs"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc --noEmit && esbuild src/index.ts --bundle --platform=node --target=node20 --format=cjs --outfile=dist/index.cjs",
+    "start": "node dist/index.cjs",
+    "build:test": "esbuild tests/config.test.ts --bundle --platform=node --target=node20 --format=cjs --outfile=dist/test.cjs",
+    "test": "npm run build && npm run build:test && node --test --test-reporter=spec dist/test.cjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "engagelab",
+    "email",
+    "mcp",
+    "agent",
+    "ai",
+    "send-email",
+    "inbox",
+    "model-context-protocol",
+    "claude",
+    "cursor"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Metaverse-Cloud/engagelab-email-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Metaverse-Cloud/engagelab-email-mcp/issues"
+  },
+  "homepage": "https://github.com/Metaverse-Cloud/engagelab-email-mcp#readme",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.28.1",
+    "typescript": "^5.7.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
