@@ -5,10 +5,13 @@
   "type": "module",
   "main": "./dist/index.cjs",
   "bin": {
-    "engagelab-email-mcp": "./dist/index.cjs"
+    "engagelab-email-mcp": "dist/index.cjs"
   },
   "files": [
-    "dist/"
+    "dist/index.cjs",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc --noEmit && esbuild src/index.ts --bundle --platform=node --target=node20 --format=cjs --outfile=dist/index.cjs",
