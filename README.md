@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-green)](https://nodejs.org)
 
+**English** | [简体中文](README.zh-CN.md)
+
 **Send, receive, and reply to email from AI agents** — through the [Model Context Protocol](https://modelcontextprotocol.io).
 
 Each agent gets its **own mailbox**: a real address that sends *and* receives, with conversations grouped into threads so your agent has context. Works with Claude Desktop, Claude Code, Cursor, Cowork, and any MCP-compatible client.
