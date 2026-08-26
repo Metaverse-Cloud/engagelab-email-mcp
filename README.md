@@ -45,6 +45,16 @@ Most email APIs are send-only. Agents that need to *have a conversation* over em
 
 ## Quickstart
 
+### Smithery / MCPB
+
+For local stdio distribution, build an MCPB bundle:
+
+```bash
+npm run build:mcpb
+```
+
+The bundle is generated at `dist/engagelab-agent-email.mcpb` and can be uploaded through [Smithery publishing](https://smithery.ai/new).
+
 **1. Get a Secret Key.** Create an EngageLab account and generate a key from the console (format `sk_sg_xxx` — the prefix selects the region). Or use the [CLI](https://github.com/Metaverse-Cloud/engagelab-email-cli): `engagelab-email-cli login` creates one via browser.
 
 **2. Create a mailbox.** In the console, create a mailbox for your agent (shared subdomain is instant; custom domains need DNS verification). Programmatic mailbox creation is on the roadmap — see [Troubleshooting](#troubleshooting) if `list_mailboxes` returns empty.

@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "build": "tsc --noEmit && esbuild src/index.ts --bundle --platform=node --target=node20 --format=cjs --outfile=dist/index.cjs",
+    "build:mcpb": "npm run build && node scripts/build-mcpb.mjs",
     "start": "node dist/index.cjs",
     "build:test": "esbuild tests/config.test.ts --bundle --platform=node --target=node20 --format=cjs --outfile=dist/test.cjs",
     "test": "npm run build && npm run build:test && node --test --test-reporter=spec dist/test.cjs",

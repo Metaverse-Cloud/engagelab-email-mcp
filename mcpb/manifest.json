@@ -1,0 +1,58 @@
+{
+  "manifest_version": "0.3",
+  "name": "engagelab-agent-email",
+  "display_name": "EngageLab Agent Email",
+  "version": "0.1.0",
+  "description": "Send, receive, monitor and reply to email from AI agents.",
+  "long_description": "Connect an AI agent to EngageLab Agent Email. Discover mailboxes, send email, monitor inbound messages, inspect threads and reply with conversation context.",
+  "author": {
+    "name": "EngageLab",
+    "url": "https://www.engagelab.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Metaverse-Cloud/engagelab-email-mcp.git"
+  },
+  "homepage": "https://github.com/Metaverse-Cloud/engagelab-email-mcp",
+  "documentation": "https://github.com/Metaverse-Cloud/engagelab-email-mcp#readme",
+  "support": "https://github.com/Metaverse-Cloud/engagelab-email-mcp/issues",
+  "license": "MIT",
+  "keywords": [
+    "email",
+    "agent email",
+    "mcp",
+    "ai agents",
+    "send email",
+    "inbox",
+    "customer support"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": {
+        "ENGAGELAB_EMAIL_SECRET_KEY": "${user_config.secret_key}",
+        "ENGAGELAB_EMAIL_BASE_URL": "${user_config.base_url}"
+      }
+    }
+  },
+  "user_config": {
+    "secret_key": {
+      "type": "string",
+      "title": "EngageLab Secret Key",
+      "description": "Secret Key from the EngageLab Agent Email console. It starts with sk_.",
+      "required": true,
+      "sensitive": true
+    },
+    "base_url": {
+      "type": "string",
+      "title": "API Base URL (optional)",
+      "description": "Leave empty to infer the region from your Secret Key.",
+      "default": "",
+      "required": false,
+      "sensitive": false
+    }
+  }
+}

@@ -1,5 +1,6 @@
 node_modules/
 dist/
+mcpb/server/
 .npm-package/
 *.log
 .DS_Store
