@@ -26,6 +26,44 @@
     "inbox",
     "customer support"
   ],
+  "tools": [
+    {
+      "name": "list_mailboxes",
+      "description": "List mailboxes available to the authenticated account. Call this first to discover mailbox IDs."
+    },
+    {
+      "name": "send_email",
+      "description": "Send a new email with text or HTML content, recipients, and optional attachments."
+    },
+    {
+      "name": "reply_email",
+      "description": "Reply to an inbound message while preserving the conversation thread."
+    },
+    {
+      "name": "list_inbound_messages",
+      "description": "List inbound email messages, newest first, with optional mailbox and keyword filters."
+    },
+    {
+      "name": "get_message",
+      "description": "Get the full details of an inbound message by message UID."
+    },
+    {
+      "name": "check_new_messages",
+      "description": "Poll once for new inbound messages without blocking."
+    },
+    {
+      "name": "list_threads",
+      "description": "List conversation threads, optionally filtered by mailbox or keyword."
+    },
+    {
+      "name": "get_thread",
+      "description": "Get details of one conversation thread."
+    },
+    {
+      "name": "list_thread_messages",
+      "description": "List all messages inside a conversation thread, oldest first."
+    }
+  ],
   "server": {
     "type": "node",
     "entry_point": "server/index.js",
