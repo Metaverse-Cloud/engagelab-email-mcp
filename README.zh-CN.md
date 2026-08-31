@@ -6,6 +6,8 @@
 
 [English](README.md) | **简体中文**
 
+> EngageLab Email 官方项目。
+
 **让 AI Agent 收发邮件、监控收件箱并回复** —— 基于 [Model Context Protocol](https://modelcontextprotocol.io)。
 
 每个 agent 拥有**自己的邮箱**：一个真实地址，既能发信也能收信，往来邮件自动归入会话线程（thread），agent 始终有完整上下文。支持 Claude Desktop、Claude Code、Cursor、Cowork 及任何兼容 MCP 的客户端。
