@@ -57,6 +57,10 @@ npm run build:mcpb
 
 生成文件位于 `dist/engagelab-agent-email.mcpb`，可通过 [Smithery 发布页面](https://smithery.ai/new)上传。
 
+### 官方 MCP Registry
+
+EngageLab Agent Email 已收录到[官方 MCP Registry](https://registry.modelcontextprotocol.io/?q=io.github.R1ghtHereWaiting%2Fengagelab-email)。支持从 Registry 搜索的客户端可使用 server name `io.github.R1ghtHereWaiting/engagelab-email` 查找；底层 npm 包仍是 [`@engagelabemail/mcp`](https://www.npmjs.com/package/@engagelabemail/mcp)。
+
 **1. 获取 Secret Key。** 注册 EngageLab 账号，在控制台生成密钥（格式 `sk_sg_xxx` —— 前缀即区域）。也可用 [CLI](https://github.com/Metaverse-Cloud/engagelab-email-cli)：`engagelab-email-cli login` 通过浏览器登录自动生成。
 
 **2. 创建邮箱。** 在控制台为 agent 创建一个邮箱（共享子域名即时可用；自定义域名需 DNS 验证）。程序化创建邮箱已在规划中 —— 若 `list_mailboxes` 返回空，见[故障排查](#故障排查)。
