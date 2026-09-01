@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "engagelab-agent-email",
   "display_name": "EngageLab Agent Email",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Send, receive, monitor and reply to email from AI agents.",
   "long_description": "Connect an AI agent to EngageLab Agent Email. Discover mailboxes, send email, monitor inbound messages, inspect threads and reply with conversation context.",
   "author": {

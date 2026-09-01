@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.Metaverse-Cloud/engagelab-email",
+  "name": "io.github.R1ghtHereWaiting/engagelab-email",
   "description": "Send, receive, monitor and reply to email from AI agents with threaded inbox context.",
   "repository": {
     "url": "https://github.com/Metaverse-Cloud/engagelab-email-mcp",
     "source": "github"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@engagelabemail/mcp",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "transport": {
         "type": "stdio"
       },
