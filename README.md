@@ -8,6 +8,8 @@
 
 > Official EngageLab Email project.
 
+This repository distributes a **local stdio MCP server**. It does not provide a hosted OAuth or HTTP MCP endpoint; run it locally with the installation command below.
+
 **Send, receive, and reply to email from AI agents** — through the [Model Context Protocol](https://modelcontextprotocol.io).
 
 Each agent gets its **own mailbox**: a real address that sends *and* receives, with conversations grouped into threads so your agent has context. Works with Claude Desktop, Claude Code, Cursor, Cowork, and any MCP-compatible client.
@@ -55,11 +57,11 @@ For local stdio distribution, build an MCPB bundle:
 npm run build:mcpb
 ```
 
-The bundle is generated at `dist/engagelab-agent-email.mcpb` and can be uploaded through [Smithery publishing](https://smithery.ai/new).
+The bundle is generated at `dist/engagelab-agent-email.mcpb` and can be uploaded through [Smithery publishing](https://smithery.ai/docs/build/publish).
 
 ### Official MCP Registry
 
-EngageLab Agent Email is also listed in the [official MCP Registry](https://registry.modelcontextprotocol.io/?q=io.github.R1ghtHereWaiting%2Fengagelab-email). Clients that consume the Registry can find it by the server name `io.github.R1ghtHereWaiting/engagelab-email`; the underlying npm package remains [`@engagelabemail/mcp`](https://www.npmjs.com/package/@engagelabemail/mcp).
+EngageLab Agent Email is also listed in the [official MCP Registry](https://registry.modelcontextprotocol.io/?q=io.github.Metaverse-Cloud%2Fengagelab-email). Clients that consume the Registry can find it by the server name `io.github.Metaverse-Cloud/engagelab-email`; the underlying npm package remains [`@engagelabemail/mcp`](https://www.npmjs.com/package/@engagelabemail/mcp).
 
 **1. Get a Secret Key.** Create an EngageLab account and generate a key from the console (format `sk_sg_xxx` — the prefix selects the region). Or use the [CLI](https://github.com/Metaverse-Cloud/engagelab-email-cli): `engagelab-email-cli login` creates one via browser.
 

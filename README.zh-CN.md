@@ -8,6 +8,8 @@
 
 > EngageLab Email 官方项目。
 
+本仓库发布的是**本地 stdio MCP server**，不提供托管的 OAuth 或 HTTP MCP endpoint；请使用下方安装命令在本地运行。
+
 **让 AI Agent 收发邮件、监控收件箱并回复** —— 基于 [Model Context Protocol](https://modelcontextprotocol.io)。
 
 每个 agent 拥有**自己的邮箱**：一个真实地址，既能发信也能收信，往来邮件自动归入会话线程（thread），agent 始终有完整上下文。支持 Claude Desktop、Claude Code、Cursor、Cowork 及任何兼容 MCP 的客户端。
@@ -55,11 +57,11 @@
 npm run build:mcpb
 ```
 
-生成文件位于 `dist/engagelab-agent-email.mcpb`，可通过 [Smithery 发布页面](https://smithery.ai/new)上传。
+生成文件位于 `dist/engagelab-agent-email.mcpb`，可通过 [Smithery 发布文档](https://smithery.ai/docs/build/publish)上传。
 
 ### 官方 MCP Registry
 
-EngageLab Agent Email 已收录到[官方 MCP Registry](https://registry.modelcontextprotocol.io/?q=io.github.R1ghtHereWaiting%2Fengagelab-email)。支持从 Registry 搜索的客户端可使用 server name `io.github.R1ghtHereWaiting/engagelab-email` 查找；底层 npm 包仍是 [`@engagelabemail/mcp`](https://www.npmjs.com/package/@engagelabemail/mcp)。
+EngageLab Agent Email 已收录到[官方 MCP Registry](https://registry.modelcontextprotocol.io/?q=io.github.Metaverse-Cloud%2Fengagelab-email)。支持从 Registry 搜索的客户端可使用 server name `io.github.Metaverse-Cloud/engagelab-email` 查找；底层 npm 包仍是 [`@engagelabemail/mcp`](https://www.npmjs.com/package/@engagelabemail/mcp)。
 
 **1. 获取 Secret Key。** 注册 EngageLab 账号，在控制台生成密钥（格式 `sk_sg_xxx` —— 前缀即区域）。也可用 [CLI](https://github.com/Metaverse-Cloud/engagelab-email-cli)：`engagelab-email-cli login` 通过浏览器登录自动生成。
 

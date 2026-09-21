@@ -14,7 +14,7 @@ async function main() {
   }
 
   const server = new McpServer(
-    { name: 'engagelab-agent-email', version: '0.1.0' },
+    { name: 'engagelab-agent-email', version: '0.1.3' },
     {
       instructions:
         'EngageLab Agent Email: send, receive, monitor and reply to email. Start with list_mailboxes to discover mailbox IDs. Auth is handled via the ENGAGELAB_EMAIL_SECRET_KEY environment variable.',
