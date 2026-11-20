@@ -97,6 +97,23 @@ reply_email(uid, { text: ... }) → response lands in the same thread
 
 Composio does not list third-party MCP servers as managed toolkits, but you can connect this server as a **custom MCP server** in the Composio dashboard or in [Rube](https://rube.app/mcp) (Composio's universal MCP client): use `npx -y @engagelabemail/mcp` as the command and set `ENGAGELAB_EMAIL_SECRET_KEY` the same way as in the JSON block above.
 
+## Use with LangChain
+
+LangChain works with any MCP server through the official [`langchain-mcp-adapters`](https://github.com/langchain-ai/langchain-mcp-adapters) package:
+
+```python
+from langchain_mcp_adapters.client import MultiServerMCPClient
+
+client = MultiServerMCPClient({
+    "engagelab-email": {
+        "command": "npx",
+        "args": ["-y", "@engagelabemail/mcp"],
+        "env": {"ENGAGELAB_EMAIL_SECRET_KEY": "sk_sg_your_key"},
+        "transport": "stdio",
+    }
+})
+```
+
 ## Configuration
 
 | Environment variable | Required | Description |
