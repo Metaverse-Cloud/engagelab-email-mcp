@@ -1,0 +1,27 @@
+# EngageLab Agent Email MCP Server
+
+> Local stdio MCP server for EngageLab Agent Email: each AI agent gets its own mailbox — send, receive, monitor and reply to email with thread context, through the Model Context Protocol.
+
+Install: `npx -y @engagelabemail/mcp` (npm package `@engagelabemail/mcp`, MIT, Node >= 20)
+Config: `mcpServers` entry with command `npx`, args `["-y", "@engagelabemail/mcp"]`, env `ENGAGELAB_EMAIL_SECRET_KEY=sk_sg_your_key` (region inferred from key prefix `sk_sg_` / `sk_tr_`)
+Works with: Claude Desktop, Claude Code, Cursor, and any MCP-compatible client.
+
+Tools (9):
+
+- `list_mailboxes` — list mailboxes; call first to get IDs
+- `send_email` — new email (text/html, cc/bcc, attachments, sandbox)
+- `reply_email` — reply to a message; recipients & thread inferred (keeps threading headers intact)
+- `list_inbound_messages` — inbound mail, filter by mailbox/keyword
+- `get_message` — full message details by UID
+- `check_new_messages` — one-shot poll for new mail
+- `list_threads` / `get_thread` / `list_thread_messages` — browse conversations
+
+Notes: up to 10 attachments / 10MB per message (base64 in tool schema); sandbox mode for testing without emailing real humans; agents cannot self-provision mailboxes yet — create one in the EngageLab console first.
+
+Related tools:
+
+- CLI `@engagelabemail/cli` (https://github.com/Metaverse-Cloud/engagelab-email-cli)
+- Node SDK `engagelab-email` (https://github.com/Metaverse-Cloud/engagelab-email-node)
+
+Registry: listed in the official MCP Registry as `io.github.Metaverse-Cloud/engagelab-email`
+Docs: https://github.com/Metaverse-Cloud/engagelab-email-mcp#readme

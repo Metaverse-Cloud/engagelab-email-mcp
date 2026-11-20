@@ -1,6 +1,7 @@
 # EngageLab Agent Email MCP Server
 
 [![npm](https://img.shields.io/npm/v/@engagelabemail/mcp)](https://www.npmjs.com/package/@engagelabemail/mcp)
+[![Official MCP Registry](https://img.shields.io/badge/Official_MCP_Registry-listed-blue)](https://registry.modelcontextprotocol.io/?q=io.github.Metaverse-Cloud%2Fengagelab-email)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-green)](https://nodejs.org)
 
@@ -91,6 +92,10 @@ get_message(uid)                → body, attachments
 list_thread_messages(threadId)  → full conversation context
 reply_email(uid, { text: ... }) → response lands in the same thread
 ```
+
+## Use with Composio / Rube
+
+Composio does not list third-party MCP servers as managed toolkits, but you can connect this server as a **custom MCP server** in the Composio dashboard or in [Rube](https://rube.app/mcp) (Composio's universal MCP client): use `npx -y @engagelabemail/mcp` as the command and set `ENGAGELAB_EMAIL_SECRET_KEY` the same way as in the JSON block above.
 
 ## Configuration
 
