@@ -49,15 +49,15 @@
 
 ## 快速开始
 
-### Smithery / MCPB
+### MCPB Bundle
 
-本服务支持以 MCPB Bundle 形式发布到 Smithery。生成 bundle：
+本服务支持生成 MCPB Bundle（格式见 [MCPB](https://github.com/modelcontextprotocol/mcpb)）：
 
 ```bash
 npm run build:mcpb
 ```
 
-生成文件位于 `dist/engagelab-agent-email.mcpb`，可通过 [Smithery 发布文档](https://smithery.ai/docs/build/publish)上传。
+生成文件位于 `dist/engagelab-agent-email.mcpb`，可供兼容 MCPB 的客户端使用。
 
 ### 官方 MCP Registry
 
@@ -91,6 +91,10 @@ get_message(uid)                → 正文、附件
 list_thread_messages(threadId)  → 完整会话上下文
 reply_email(uid, { text: ... }) → 回复进入同一线程
 ```
+
+## Agent Skill（Claude Code）
+
+[`skills/engagelab-email/SKILL.md`](skills/engagelab-email/SKILL.md) 把常用收件箱工作流——读取线程、起草、人工审批、发送/回复与游标续传——打包为 Agent Skill，配合上方 MCP server 使用；其中不含凭据，仅引用环境变量 `ENGAGELAB_EMAIL_SECRET_KEY`。
 
 ## 配置
 

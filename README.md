@@ -50,15 +50,15 @@ Most email APIs are send-only. Agents that need to *have a conversation* over em
 
 ## Quickstart
 
-### Smithery / MCPB
+### MCPB bundle
 
-For local stdio distribution, build an MCPB bundle:
+For local stdio distribution, build an MCPB bundle (format: [MCPB](https://github.com/modelcontextprotocol/mcpb)):
 
 ```bash
 npm run build:mcpb
 ```
 
-The bundle is generated at `dist/engagelab-agent-email.mcpb` and can be uploaded through [Smithery publishing](https://smithery.ai/docs/build/publish).
+The bundle is generated at `dist/engagelab-agent-email.mcpb` for MCPB-compatible clients.
 
 ### Official MCP Registry
 
@@ -113,6 +113,10 @@ client = MultiServerMCPClient({
     }
 })
 ```
+
+## Agent Skill (Claude Code)
+
+[`skills/engagelab-email/SKILL.md`](skills/engagelab-email/SKILL.md) packages the common inbox workflow — read the thread, draft, get approval, send or reply with a persisted cursor — as an Agent Skill. Use it together with the MCP server above; it contains no credentials and only references `ENGAGELAB_EMAIL_SECRET_KEY` from the environment.
 
 ## Configuration
 
