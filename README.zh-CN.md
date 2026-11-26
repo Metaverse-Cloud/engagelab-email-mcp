@@ -1,6 +1,7 @@
 # EngageLab Agent Email MCP Server
 
 [![npm](https://img.shields.io/npm/v/@engagelabemail/mcp)](https://www.npmjs.com/package/@engagelabemail/mcp)
+[![Official MCP Registry](https://img.shields.io/badge/Official_MCP_Registry-listed-blue)](https://registry.modelcontextprotocol.io/?q=io.github.Metaverse-Cloud%2Fengagelab-email)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-green)](https://nodejs.org)
 
@@ -90,6 +91,27 @@ check_new_messages()            → [messageUids]
 get_message(uid)                → 正文、附件
 list_thread_messages(threadId)  → 完整会话上下文
 reply_email(uid, { text: ... }) → 回复进入同一线程
+```
+
+## 在 Composio / Rube 中使用
+
+Composio 不把第三方 MCP server 作为托管 toolkit 收录，但可以在 Composio 控制台或 [Rube](https://rube.app/mcp)（Composio 的通用 MCP 客户端）中把本服务作为**自定义 MCP server** 接入：命令填 `npx -y @engagelabemail/mcp`，环境变量 `ENGAGELAB_EMAIL_SECRET_KEY` 与上方 JSON 块一致。
+
+## 在 LangChain 中使用
+
+LangChain 通过官方 [`langchain-mcp-adapters`](https://github.com/langchain-ai/langchain-mcp-adapters) 支持任意 MCP server：
+
+```python
+from langchain_mcp_adapters.client import MultiServerMCPClient
+
+client = MultiServerMCPClient({
+    "engagelab-email": {
+        "command": "npx",
+        "args": ["-y", "@engagelabemail/mcp"],
+        "env": {"ENGAGELAB_EMAIL_SECRET_KEY": "sk_sg_your_key"},
+        "transport": "stdio",
+    }
+})
 ```
 
 ## Agent Skill（Claude Code）
